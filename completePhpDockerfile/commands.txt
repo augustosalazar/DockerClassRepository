@@ -1,0 +1,8 @@
+docker build -t basicmysql .
+docker run --name theName -p 80:80 basicmysql 
+docker run --name theName -p 80:80 -d -v "$(pwd)"/src:/var/www/html basicmysql
+docker stop theName
+docker exec -it theName bash  // this will get command line
+
+# to get a list of images
+docker exec -it theName bash
