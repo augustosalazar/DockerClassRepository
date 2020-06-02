@@ -1,0 +1,14 @@
+
+compile with
+docker image build -t mpiimage:v0.1 .
+docker run -d  -it  --name mpicont -v "$(pwd)"/target:/app   mpiimage:v0.1
+
+to enter the container:
+ docker exec -it mpicont bash
+
+cd /app
+su mpirun
+
+mpiexec -n 3 python3 primeChecker7.py 1000
+
+export PYTHONIOENCODING=utf8
