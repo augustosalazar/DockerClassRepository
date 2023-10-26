@@ -1,0 +1,29 @@
+# Define the version of file yml see more information on https://docs.docker.com/v1.8/compose/yml/
+ version: "3.3"
+ services:
+    web:
+     container_name: elWebNodeJs
+     build:
+      context: ./webNodeDocker
+     depends_on:
+     - db
+     ports:
+     - 81:8080
+     links:
+     - db
+    db:
+     container_name: laBd
+     build: 
+      context: ./other
+     restart: always
+     volumes:
+     - volumeDB:/var/lib/mysql
+     ports:
+     - 3306:3306
+     environment:
+         MYSQL_ROOT_PASSWORD: password
+         MYSQL_USER: user
+         MYSQL_DATABASE: db_test
+
+ volumes:
+    volumeDB:
