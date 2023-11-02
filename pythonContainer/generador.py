@@ -1,4 +1,5 @@
 import os 
 import json 
 import shutil,bz2,getopt 
-print('hello')
+path = os.getcwd()
+print('current dir',path)
