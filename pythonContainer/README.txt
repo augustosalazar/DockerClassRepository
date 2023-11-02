@@ -1,5 +1,5 @@
 Para construir la imagen:
-docker build --tag pythoni
+docker build --tag pythoni .
 
 Para ejecutar:
 
