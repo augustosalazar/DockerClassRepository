@@ -1,0 +1,11 @@
+FROM ubuntu:18.04
+RUN apt update
+RUN apt -y install sudo
+RUN apt -y install software-properties-common
+RUN add-apt-repository -y ppa:deadsnakes/ppa
+RUN apt update
+RUN apt -y install python3.7
+RUN apt -y install python3-pip
+RUN pip3 install numpy
+RUN pip3 install networkx
+RUN mkdir /app
