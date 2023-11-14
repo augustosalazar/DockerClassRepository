@@ -9,3 +9,6 @@ docker exec tweet5 python3 /app/generador.py
 
 Opción 2:
 docker run --rm -v C:\desarrollo\python\tweetSplit:/app pythoni python3 /app/generador.py
+
+Opción 3:
+docker run --rm -v C:\desarrollo\python\tweetSplit:/app augustosalazar/pyhoni:1 python3 /app/generador.py
