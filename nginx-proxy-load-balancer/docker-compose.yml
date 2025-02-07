@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx_proxy
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - web1
+      - web2
+
+  web1:
+    image: httpd:2.4
+    container_name: web_server_1
+    volumes:
+      - ./web1:/usr/local/apache2/htdocs
+    restart: always
+
+  web2:
+    image: httpd:2.4
+    container_name: web_server_2
+    volumes:
+      - ./web2:/usr/local/apache2/htdocs
+    restart: always
